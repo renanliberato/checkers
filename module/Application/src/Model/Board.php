@@ -15,6 +15,7 @@ namespace Application\Model;
  */
 class Board {
     public $spaces;
+    public $checkers;
     
     public function __construct()
     {

@@ -13,11 +13,20 @@
 </div>
 
 <script>
+    var possibleMovementsFromDragging;
     function allowDrop(ev) {
-        ev.preventDefault();
+        const destinySpaceId = ev.srcElement.id;
+        console.log(possibleMovementsFromDragging, destinySpaceId)
+        if (possibleMovementsFromDragging.includes(destinySpaceId))
+            ev.preventDefault();
     }
 
     function drag(ev) {
+        possibleMovementsFromDragging = JSON.parse(ev.target.getAttribute('data-canmoveto'))
+        possibleMovementsFromDragging = possibleMovementsFromDragging.map(movement => {
+            return `space${movement.row}${movement.column}`;
+        });
+        console.log(possibleMovementsFromDragging);
         ev.dataTransfer.setData("id", ev.target.id);
         ev.dataTransfer.setData("currow", ev.target.parentElement.getAttribute('data-row'));
         ev.dataTransfer.setData("curcolumn", ev.target.parentElement.getAttribute('data-column'));
@@ -31,7 +40,6 @@
         var row = ev.target.getAttribute('data-row');
         var column = ev.target.getAttribute('data-column');
 
-        //console.log({id, curRow, curColumn, row, column});
         ev.target.appendChild(document.getElementById(id));
         //window.location.href = `/application/index/move?currow=${curRow}&curcolumn=${curColumn}&row=${row}&column=${column}`;
         fetch(`/application/index/move?currow=${curRow}&curcolumn=${curColumn}&row=${row}&column=${column}`, {

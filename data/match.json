@@ -7,7 +7,10 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "9c14d7a8-1015-4d7e-87e0-2f6f94e924fe"
+                    "id": "9c14d7a8-1015-4d7e-87e0-2f6f94e924fe",
+                    "row": 1,
+                    "column": "j",
+                    "canMoveTo": []
                 },
                 "color": "black"
             },
@@ -23,7 +26,10 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "c170ddf7-0586-46a2-9bfe-b85283ddd726"
+                    "id": "c170ddf7-0586-46a2-9bfe-b85283ddd726",
+                    "row": 1,
+                    "column": "h",
+                    "canMoveTo": []
                 },
                 "color": "black"
             },
@@ -39,7 +45,15 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "6966daa5-0051-47f4-a420-2b32364067de"
+                    "id": "6966daa5-0051-47f4-a420-2b32364067de",
+                    "row": 1,
+                    "column": "f",
+                    "canMoveTo": [
+                        {
+                            "row": 2,
+                            "column": "e"
+                        }
+                    ]
                 },
                 "color": "black"
             },
@@ -52,7 +66,19 @@
             "d": {
                 "x": null,
                 "y": null,
-                "checker": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "8605db97-f39e-495b-9539-6480b9e8cab5",
+                    "row": 1,
+                    "column": "d",
+                    "canMoveTo": [
+                        {
+                            "row": 2,
+                            "column": "e"
+                        }
+                    ]
+                },
                 "color": "black"
             },
             "c": {
@@ -67,7 +93,10 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "a011394c-e1a2-416a-9f27-55156764c6d5"
+                    "id": "a011394c-e1a2-416a-9f27-55156764c6d5",
+                    "row": 1,
+                    "column": "b",
+                    "canMoveTo": []
                 },
                 "color": "black"
             },
@@ -91,7 +120,10 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "a3e74c52-1cbf-4a35-be64-e9b0b30670bd"
+                    "id": "a3e74c52-1cbf-4a35-be64-e9b0b30670bd",
+                    "row": 2,
+                    "column": "i",
+                    "canMoveTo": []
                 },
                 "color": "black"
             },
@@ -107,7 +139,10 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "c75e7ac3-beed-4be6-8127-00fb4f02739b"
+                    "id": "c75e7ac3-beed-4be6-8127-00fb4f02739b",
+                    "row": 2,
+                    "column": "g",
+                    "canMoveTo": []
                 },
                 "color": "black"
             },
@@ -120,11 +155,7 @@
             "e": {
                 "x": null,
                 "y": null,
-                "checker": {
-                    "team": 1,
-                    "color": "white",
-                    "id": "8605db97-f39e-495b-9539-6480b9e8cab5"
-                },
+                "checker": null,
                 "color": "black"
             },
             "d": {
@@ -139,7 +170,19 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "490cc646-8ef3-4e68-a767-e64092bafaf8"
+                    "id": "490cc646-8ef3-4e68-a767-e64092bafaf8",
+                    "row": 2,
+                    "column": "c",
+                    "canMoveTo": [
+                        {
+                            "row": 3,
+                            "column": "b"
+                        },
+                        {
+                            "row": 3,
+                            "column": "d"
+                        }
+                    ]
                 },
                 "color": "black"
             },
@@ -155,7 +198,15 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "3341e803-a6ab-4ad0-807a-7af0c22e66fe"
+                    "id": "3341e803-a6ab-4ad0-807a-7af0c22e66fe",
+                    "row": 2,
+                    "column": "a",
+                    "canMoveTo": [
+                        {
+                            "row": 3,
+                            "column": "b"
+                        }
+                    ]
                 },
                 "color": "black"
             }
@@ -167,7 +218,10 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "9f262371-e90b-4214-8357-7fc6a363114f"
+                    "id": "9f262371-e90b-4214-8357-7fc6a363114f",
+                    "row": 3,
+                    "column": "j",
+                    "canMoveTo": []
                 },
                 "color": "black"
             },
@@ -183,7 +237,10 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "347279a5-4fe8-4101-94b9-2c962dd76362"
+                    "id": "347279a5-4fe8-4101-94b9-2c962dd76362",
+                    "row": 3,
+                    "column": "h",
+                    "canMoveTo": []
                 },
                 "color": "black"
             },
@@ -199,7 +256,15 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "3ab11d71-8118-4013-a1e3-2667c4a2e920"
+                    "id": "3ab11d71-8118-4013-a1e3-2667c4a2e920",
+                    "row": 3,
+                    "column": "f",
+                    "canMoveTo": [
+                        {
+                            "row": 4,
+                            "column": "e"
+                        }
+                    ]
                 },
                 "color": "black"
             },
@@ -212,11 +277,7 @@
             "d": {
                 "x": null,
                 "y": null,
-                "checker": {
-                    "team": 1,
-                    "color": "white",
-                    "id": "89c99664-84d0-48f6-85db-85d41c532284"
-                },
+                "checker": null,
                 "color": "black"
             },
             "c": {
@@ -251,7 +312,19 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "45d953af-c37d-4233-90ec-5c74fc1714a1"
+                    "id": "45d953af-c37d-4233-90ec-5c74fc1714a1",
+                    "row": 4,
+                    "column": "i",
+                    "canMoveTo": [
+                        {
+                            "row": 5,
+                            "column": "h"
+                        },
+                        {
+                            "row": 5,
+                            "column": "j"
+                        }
+                    ]
                 },
                 "color": "black"
             },
@@ -267,7 +340,19 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "75850b72-b50a-4ac9-b2eb-ba60762b532f"
+                    "id": "75850b72-b50a-4ac9-b2eb-ba60762b532f",
+                    "row": 4,
+                    "column": "g",
+                    "canMoveTo": [
+                        {
+                            "row": 5,
+                            "column": "f"
+                        },
+                        {
+                            "row": 5,
+                            "column": "h"
+                        }
+                    ]
                 },
                 "color": "black"
             },
@@ -295,7 +380,10 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "c6eb581b-540e-4175-8800-017d224972c6"
+                    "id": "c6eb581b-540e-4175-8800-017d224972c6",
+                    "row": 4,
+                    "column": "c",
+                    "canMoveTo": []
                 },
                 "color": "black"
             },
@@ -311,7 +399,10 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "09754395-ddab-4a06-b67c-08c02e587a09"
+                    "id": "09754395-ddab-4a06-b67c-08c02e587a09",
+                    "row": 4,
+                    "column": "a",
+                    "canMoveTo": []
                 },
                 "color": "black"
             }
@@ -356,11 +447,7 @@
             "d": {
                 "x": null,
                 "y": null,
-                "checker": {
-                    "team": 1,
-                    "color": "white",
-                    "id": "543e96d2-b63a-4db1-b645-62fd92c2957b"
-                },
+                "checker": null,
                 "color": "black"
             },
             "c": {
@@ -375,7 +462,19 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "74094b8d-5e51-44f8-abfb-efdfddc6985c"
+                    "id": "74094b8d-5e51-44f8-abfb-efdfddc6985c",
+                    "row": 5,
+                    "column": "b",
+                    "canMoveTo": [
+                        {
+                            "row": 6,
+                            "column": "a"
+                        },
+                        {
+                            "row": 6,
+                            "column": "c"
+                        }
+                    ]
                 },
                 "color": "black"
             },
@@ -408,7 +507,14 @@
             "g": {
                 "x": null,
                 "y": null,
-                "checker": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "89c99664-84d0-48f6-85db-85d41c532284",
+                    "row": 6,
+                    "column": "g",
+                    "canMoveTo": []
+                },
                 "color": "black"
             },
             "f": {
@@ -423,7 +529,10 @@
                 "checker": {
                     "team": 1,
                     "color": "white",
-                    "id": "ee41ce75-dd72-4375-b238-a56dc92f12a1"
+                    "id": "ee41ce75-dd72-4375-b238-a56dc92f12a1",
+                    "row": 6,
+                    "column": "e",
+                    "canMoveTo": []
                 },
                 "color": "black"
             },
@@ -436,7 +545,19 @@
             "c": {
                 "x": null,
                 "y": null,
-                "checker": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "543e96d2-b63a-4db1-b645-62fd92c2957b",
+                    "row": 5,
+                    "column": "d",
+                    "canMoveTo": [
+                        {
+                            "row": 6,
+                            "column": "c"
+                        }
+                    ]
+                },
                 "color": "black"
             },
             "b": {
@@ -459,7 +580,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "58f60495-84d1-44a1-820a-cc83cf4d4866"
+                    "id": "58f60495-84d1-44a1-820a-cc83cf4d4866",
+                    "row": 7,
+                    "column": "j",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -475,7 +599,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "9f35558d-8217-4a66-9f1b-f8e7ef8314b5"
+                    "id": "9f35558d-8217-4a66-9f1b-f8e7ef8314b5",
+                    "row": 7,
+                    "column": "h",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -491,7 +618,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "febf459a-8a7d-4551-a74a-6751e5246217"
+                    "id": "febf459a-8a7d-4551-a74a-6751e5246217",
+                    "row": 7,
+                    "column": "f",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -507,7 +637,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "3bbb8ecf-68ab-4daa-93fd-fd2cb1fb5bd3"
+                    "id": "3bbb8ecf-68ab-4daa-93fd-fd2cb1fb5bd3",
+                    "row": 7,
+                    "column": "d",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -523,7 +656,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "c4ca7d28-33fa-4281-bd8e-fb8efd541792"
+                    "id": "c4ca7d28-33fa-4281-bd8e-fb8efd541792",
+                    "row": 7,
+                    "column": "b",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -547,7 +683,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "fd273435-fa5f-4522-af21-7b23f76f56b2"
+                    "id": "fd273435-fa5f-4522-af21-7b23f76f56b2",
+                    "row": 8,
+                    "column": "i",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -563,7 +702,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "50e72676-e658-4a90-8b73-58fe54f196d7"
+                    "id": "50e72676-e658-4a90-8b73-58fe54f196d7",
+                    "row": 8,
+                    "column": "g",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -579,7 +721,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "dc16711e-89d3-4128-be5b-3346b6dc535e"
+                    "id": "dc16711e-89d3-4128-be5b-3346b6dc535e",
+                    "row": 8,
+                    "column": "e",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -595,7 +740,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "3ad8e9e1-18ad-4f5f-bd19-f1bca077d153"
+                    "id": "3ad8e9e1-18ad-4f5f-bd19-f1bca077d153",
+                    "row": 8,
+                    "column": "c",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -611,7 +759,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "7997d37b-7cb1-4a78-b654-83adffb1e744"
+                    "id": "7997d37b-7cb1-4a78-b654-83adffb1e744",
+                    "row": 8,
+                    "column": "a",
+                    "canMoveTo": null
                 },
                 "color": "black"
             }
@@ -623,7 +774,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "fbd08a95-2180-4178-8393-832124e02574"
+                    "id": "fbd08a95-2180-4178-8393-832124e02574",
+                    "row": 9,
+                    "column": "j",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -639,7 +793,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "b39c83ec-4678-43f9-8eea-51e0986b7365"
+                    "id": "b39c83ec-4678-43f9-8eea-51e0986b7365",
+                    "row": 9,
+                    "column": "h",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -655,7 +812,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "9ecdba3d-78c9-4b88-9fde-39077516d6b0"
+                    "id": "9ecdba3d-78c9-4b88-9fde-39077516d6b0",
+                    "row": 9,
+                    "column": "f",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -671,7 +831,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "a2ff8e4f-8a64-4223-a725-56ac7c317e48"
+                    "id": "a2ff8e4f-8a64-4223-a725-56ac7c317e48",
+                    "row": 9,
+                    "column": "d",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -687,7 +850,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "a3a1c1ec-63ed-4e71-96db-fce530d56e00"
+                    "id": "a3a1c1ec-63ed-4e71-96db-fce530d56e00",
+                    "row": 9,
+                    "column": "b",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -711,7 +877,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "2bb03844-2547-43ed-bf24-37281b163177"
+                    "id": "2bb03844-2547-43ed-bf24-37281b163177",
+                    "row": 10,
+                    "column": "i",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -727,7 +896,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "f114b163-a048-49fe-a153-57c63e641e8a"
+                    "id": "f114b163-a048-49fe-a153-57c63e641e8a",
+                    "row": 10,
+                    "column": "g",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -743,7 +915,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "98deddfd-a04f-4e44-bd48-c3159c8a67fa"
+                    "id": "98deddfd-a04f-4e44-bd48-c3159c8a67fa",
+                    "row": 10,
+                    "column": "e",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -759,7 +934,10 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "8152e53b-f884-4fcd-8804-723c545681d7"
+                    "id": "8152e53b-f884-4fcd-8804-723c545681d7",
+                    "row": 10,
+                    "column": "c",
+                    "canMoveTo": null
                 },
                 "color": "black"
             },
@@ -775,10 +953,396 @@
                 "checker": {
                     "team": 2,
                     "color": "black",
-                    "id": "d554c147-a050-4c84-9b41-7735a2fb3b19"
+                    "id": "d554c147-a050-4c84-9b41-7735a2fb3b19",
+                    "row": 10,
+                    "column": "a",
+                    "canMoveTo": null
                 },
                 "color": "black"
             }
         }
-    }
+    },
+    "checkers": [
+        {
+            "team": 1,
+            "color": "white",
+            "id": "9c14d7a8-1015-4d7e-87e0-2f6f94e924fe",
+            "row": 1,
+            "column": "j",
+            "canMoveTo": []
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "c170ddf7-0586-46a2-9bfe-b85283ddd726",
+            "row": 1,
+            "column": "h",
+            "canMoveTo": []
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "6966daa5-0051-47f4-a420-2b32364067de",
+            "row": 1,
+            "column": "f",
+            "canMoveTo": [
+                {
+                    "row": 2,
+                    "column": "e"
+                }
+            ]
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "8605db97-f39e-495b-9539-6480b9e8cab5",
+            "row": 1,
+            "column": "d",
+            "canMoveTo": [
+                {
+                    "row": 2,
+                    "column": "e"
+                }
+            ]
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "a011394c-e1a2-416a-9f27-55156764c6d5",
+            "row": 1,
+            "column": "b",
+            "canMoveTo": []
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "a3e74c52-1cbf-4a35-be64-e9b0b30670bd",
+            "row": 2,
+            "column": "i",
+            "canMoveTo": []
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "c75e7ac3-beed-4be6-8127-00fb4f02739b",
+            "row": 2,
+            "column": "g",
+            "canMoveTo": []
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "490cc646-8ef3-4e68-a767-e64092bafaf8",
+            "row": 2,
+            "column": "c",
+            "canMoveTo": [
+                {
+                    "row": 3,
+                    "column": "b"
+                },
+                {
+                    "row": 3,
+                    "column": "d"
+                }
+            ]
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "3341e803-a6ab-4ad0-807a-7af0c22e66fe",
+            "row": 2,
+            "column": "a",
+            "canMoveTo": [
+                {
+                    "row": 3,
+                    "column": "b"
+                }
+            ]
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "9f262371-e90b-4214-8357-7fc6a363114f",
+            "row": 3,
+            "column": "j",
+            "canMoveTo": []
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "347279a5-4fe8-4101-94b9-2c962dd76362",
+            "row": 3,
+            "column": "h",
+            "canMoveTo": []
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "3ab11d71-8118-4013-a1e3-2667c4a2e920",
+            "row": 3,
+            "column": "f",
+            "canMoveTo": [
+                {
+                    "row": 4,
+                    "column": "e"
+                }
+            ]
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "45d953af-c37d-4233-90ec-5c74fc1714a1",
+            "row": 4,
+            "column": "i",
+            "canMoveTo": [
+                {
+                    "row": 5,
+                    "column": "h"
+                },
+                {
+                    "row": 5,
+                    "column": "j"
+                }
+            ]
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "75850b72-b50a-4ac9-b2eb-ba60762b532f",
+            "row": 4,
+            "column": "g",
+            "canMoveTo": [
+                {
+                    "row": 5,
+                    "column": "f"
+                },
+                {
+                    "row": 5,
+                    "column": "h"
+                }
+            ]
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "c6eb581b-540e-4175-8800-017d224972c6",
+            "row": 4,
+            "column": "c",
+            "canMoveTo": []
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "09754395-ddab-4a06-b67c-08c02e587a09",
+            "row": 4,
+            "column": "a",
+            "canMoveTo": []
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "543e96d2-b63a-4db1-b645-62fd92c2957b",
+            "row": 5,
+            "column": "d",
+            "canMoveTo": [
+                {
+                    "row": 6,
+                    "column": "c"
+                }
+            ]
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "74094b8d-5e51-44f8-abfb-efdfddc6985c",
+            "row": 5,
+            "column": "b",
+            "canMoveTo": [
+                {
+                    "row": 6,
+                    "column": "a"
+                },
+                {
+                    "row": 6,
+                    "column": "c"
+                }
+            ]
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "89c99664-84d0-48f6-85db-85d41c532284",
+            "row": 6,
+            "column": "g",
+            "canMoveTo": []
+        },
+        {
+            "team": 1,
+            "color": "white",
+            "id": "ee41ce75-dd72-4375-b238-a56dc92f12a1",
+            "row": 6,
+            "column": "e",
+            "canMoveTo": []
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "58f60495-84d1-44a1-820a-cc83cf4d4866",
+            "row": 7,
+            "column": "j",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "9f35558d-8217-4a66-9f1b-f8e7ef8314b5",
+            "row": 7,
+            "column": "h",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "febf459a-8a7d-4551-a74a-6751e5246217",
+            "row": 7,
+            "column": "f",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "3bbb8ecf-68ab-4daa-93fd-fd2cb1fb5bd3",
+            "row": 7,
+            "column": "d",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "c4ca7d28-33fa-4281-bd8e-fb8efd541792",
+            "row": 7,
+            "column": "b",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "fd273435-fa5f-4522-af21-7b23f76f56b2",
+            "row": 8,
+            "column": "i",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "50e72676-e658-4a90-8b73-58fe54f196d7",
+            "row": 8,
+            "column": "g",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "dc16711e-89d3-4128-be5b-3346b6dc535e",
+            "row": 8,
+            "column": "e",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "3ad8e9e1-18ad-4f5f-bd19-f1bca077d153",
+            "row": 8,
+            "column": "c",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "7997d37b-7cb1-4a78-b654-83adffb1e744",
+            "row": 8,
+            "column": "a",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "fbd08a95-2180-4178-8393-832124e02574",
+            "row": 9,
+            "column": "j",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "b39c83ec-4678-43f9-8eea-51e0986b7365",
+            "row": 9,
+            "column": "h",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "9ecdba3d-78c9-4b88-9fde-39077516d6b0",
+            "row": 9,
+            "column": "f",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "a2ff8e4f-8a64-4223-a725-56ac7c317e48",
+            "row": 9,
+            "column": "d",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "a3a1c1ec-63ed-4e71-96db-fce530d56e00",
+            "row": 9,
+            "column": "b",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "2bb03844-2547-43ed-bf24-37281b163177",
+            "row": 10,
+            "column": "i",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "f114b163-a048-49fe-a153-57c63e641e8a",
+            "row": 10,
+            "column": "g",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "98deddfd-a04f-4e44-bd48-c3159c8a67fa",
+            "row": 10,
+            "column": "e",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "8152e53b-f884-4fcd-8804-723c545681d7",
+            "row": 10,
+            "column": "c",
+            "canMoveTo": null
+        },
+        {
+            "team": 2,
+            "color": "black",
+            "id": "d554c147-a050-4c84-9b41-7735a2fb3b19",
+            "row": 10,
+            "column": "a",
+            "canMoveTo": null
+        }
+    ]
 }

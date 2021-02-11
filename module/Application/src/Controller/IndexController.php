@@ -30,21 +30,21 @@ class IndexController extends AbstractActionController {
         $column = $this->params()->fromQuery('column');
 
         $board = $this->getBoard();
-        
+
         if ($board->spaces[$row][$column]->checker == null) {
             $board->spaces[$row][$column]->checker = $board->spaces[$curRow][$curColumn]->checker;
             $board->spaces[$curRow][$curColumn]->checker = null;
-            
+
             file_put_contents('./data/match.json', json_encode($board, JSON_PRETTY_PRINT));
         }
-        
+
         $viewModel = new ViewModel([
             'board' => $board,
             'userTeam' => 1
         ]);
-        
+
         $viewModel->setTerminal(true);
-        
+
         return $viewModel;
     }
 
@@ -58,11 +58,19 @@ class IndexController extends AbstractActionController {
             foreach ($row as $columnKey => $spaceData) {
                 $board->spaces[$rowKey][$columnKey] = new \Application\Model\Space(
                         $spaceData['color'],
-                        $spaceData['checker'] == null ? null : new \Application\Model\Checker($spaceData['checker']['color'], $spaceData['checker']['team'], $spaceData['checker']['id'])
+                        $spaceData['checker'] == null ? null : new \Application\Model\Checker($spaceData['checker']['color'], $spaceData['checker']['team'], $spaceData['checker']['id'], $rowKey, $columnKey)
                 );
+                
+                if ($board->spaces[$rowKey][$columnKey]->checker != null)
+                    $board->checkers[] = $board->spaces[$rowKey][$columnKey]->checker;
             }
         }
         
+        foreach ($board->checkers as $checker) {
+            $checker->updatePossibleMovements($board);
+        }
+
         return $board;
     }
+
 }
