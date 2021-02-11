@@ -15,9 +15,17 @@ use Laminas\View\Model\ViewModel;
 class IndexController extends AbstractActionController {
 
     public function indexAction() {
-        $board = $this->getBoard();
+        $matchId = $this->params()->fromQuery('match');
+
+        if (!$matchId) {
+            return $this->redirect()->toUrl('/application/index/new');
+        }
+
+        $match = \Application\Model\GameMatch::get($matchId);
+
         return new ViewModel([
-            'board' => $board,
+            'turn' => $match->getTurn(),
+            'match' => $match,
             'userTeam' => 1
         ]);
     }
@@ -25,34 +33,19 @@ class IndexController extends AbstractActionController {
     public function moveAction() {
         $from = (int) $this->params()->fromQuery('curposition');
         $to = (int) $this->params()->fromQuery('position');
+        $matchId = $this->params()->fromQuery('match');
 
-        $board = $this->getBoard();
-
-        $move = new \Photogabble\Draughts\Move();
-        $move->from = $from;
-        $move->to = $to;
-
-        $moveResult = $board->validator->move($move);
-        
-        $board->possibleMoves = array_map(function($move) {
-            return $move->from;
-        }, $board->validator->generateMoves());
-        
-        if ($moveResult != null) {
-            $board->checkers[$to] = $board->checkers[$from];
-            $board->checkers[$to]->position = $to;
-            unset($board->checkers[$from]);
-
-            foreach ($moveResult->takes as $takePosition) {
-                unset($board->checkers[$takePosition]);
-            }
-            
-            file_put_contents('./data/fen.txt', $board->validator->generateFen());
-            file_put_contents('./data/checkers.json', json_encode($board->checkers, JSON_PRETTY_PRINT));
+        if (!$matchId) {
+            return $this->redirect()->toUrl('/application/index/new');
         }
 
+        $match = \Application\Model\GameMatch::get($matchId);
+
+        $match->move($from, $to);
+
         $viewModel = new ViewModel([
-            'board' => $board,
+            'turn' => $match->getTurn(),
+            'match' => $match,
             'userTeam' => 1
         ]);
 
@@ -62,49 +55,9 @@ class IndexController extends AbstractActionController {
     }
 
     public function newAction() {
-        $this->createBoard();
-        
-        return $this->redirect()->toUrl('/');
-    }
+        $match = \Application\Model\GameMatch::create();
 
-    private function getAsciiBoard() {
-        $board = new \Photogabble\Draughts\Draughts(file_get_contents('./data/fen.txt'));
-
-        return $board;
-    }
-
-    private function getBoard() {
-        $board = new \Application\Model\Board();
-        $board->validator = $this->getAsciiBoard();
-        $checkersJson = json_decode(file_get_contents('./data/checkers.json'), true);
-
-        $board->possibleMoves = array_map(function($move) {
-            return $move->from;
-        }, $board->validator->generateMoves());
-        
-        foreach (array_values($checkersJson) as $checker) {
-            $board->checkers[$checker['position']] = new \Application\Model\Checker($checker['color'], $checker['id'], $checker['position']);
-        }
-
-        return $board;
-    }
-
-    private function createBoard() {
-        $board = new \Application\Model\Board();
-        $board->validator = new \Photogabble\Draughts\Draughts();
-
-        array_map(function ($i) use ($board) {
-            $board->checkers[$i] = new \Application\Model\Checker('black', \Ramsey\Uuid\Uuid::uuid4()->toString(), $i);
-        }, range(1, 20));
-
-        array_map(function ($i) use ($board) {
-            $board->checkers[$i] = new \Application\Model\Checker('white', \Ramsey\Uuid\Uuid::uuid4()->toString(), $i);
-        }, range(31, 50));
-
-        file_put_contents('./data/fen.txt', $board->validator->generateFen());
-        file_put_contents('./data/checkers.json', json_encode($board->checkers, JSON_PRETTY_PRINT));
-
-        return $board;
+        return $this->redirect()->toUrl('/?match=' . $match->getId());
     }
 
 }

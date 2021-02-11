@@ -1,6 +1,6 @@
 <?php
-$checker = isset($board->checkers[$position]) ? $board->checkers[$position] : null;
-$canMove = array_search($position, $board->possibleMoves) !== false;
+$checker = isset($checkers[$position]) ? $checkers[$position] : null;
+$canMove = array_search($position, $possibleMoves) !== false;
 ?>
 
 <?php if ($checker): echo $position; ?>

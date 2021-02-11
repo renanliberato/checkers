@@ -15,11 +15,8 @@ namespace Application\Model;
  */
 class Board {
     public $checkers;
-    /**
-     * 
-     * @var \Photogabble\Draughts\Draughts
-     */
-    public $validator;
+    public $fen;
+    public $possibleMoves;
     
     public function __construct()
     {

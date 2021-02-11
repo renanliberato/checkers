@@ -1,7 +1,9 @@
 <?=
 
 $this->partial('partials/board.phtml', [
-    'board' => $board,
+    'turn' => $turn,
+    'checkers' => $match->getCheckers(),
+    'possibleMoves' => $match->getPossibleMoves(),
     'userTeam' => $userTeam
 ])
 ?>

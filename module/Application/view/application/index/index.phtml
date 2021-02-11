@@ -52,7 +52,9 @@
 <div id='board-container'>
     <?=
     $this->partial('partials/board.phtml', [
-        'board' => $board,
+        'turn' => $turn,
+        'checkers' => $match->getCheckers(),
+        'possibleMoves' => $match->getPossibleMoves(),
         'userTeam' => $userTeam
     ])
     ?>
@@ -82,10 +84,11 @@
         var id = ev.dataTransfer.getData('id');
         var curPosition = ev.dataTransfer.getData("position");
         var position = ev.target.getAttribute('data-position');
+        var match = (new URLSearchParams(document.location.search)).get('match');
 
         //ev.target.appendChild(document.getElementById(id));
         //window.location.href = `/application/index/move?currow=${curRow}&curcolumn=${curColumn}&row=${row}&column=${column}`;
-        fetch(`/application/index/move?curposition=${curPosition}&position=${position}`, {
+        fetch(`/application/index/move?match=${match}&curposition=${curPosition}&position=${position}`, {
             method: 'POST'
         })
                 .then(res => res.text())

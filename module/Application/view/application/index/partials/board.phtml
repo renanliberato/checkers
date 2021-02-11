@@ -19,7 +19,7 @@ $boardDefinition = [
 $posCounter = 1;
 ?>
 <div id="board" style="box-shadow: inset 0 0 3px #000000; width: 640px; padding: 10px;">
-    <span>Turn: <?= $board->validator->turn(); ?></span>
+    <span>Turn: <?= $turn; ?></span>
     <div style="display: flex; margin-left: 20px; margin-bottom: 10px;">
         <?php foreach (['j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'] as $columnKey): ?>
             <span style="padding-left: 30px; width: 60px; height: 15px;"><?= $columnKey ?></span>
@@ -33,7 +33,8 @@ $posCounter = 1;
                     <div class="space black" data-position='<?= $posCounter ?>' ondrop="drop(event)" ondragover="allowDrop(event)">
                         <?=
                         $this->partial('partials/checker.phtml', [
-                            'board' => $board,
+                            'possibleMoves' => $possibleMoves,
+                            'checkers' => $checkers,
                             'position' => $posCounter++,
                             'userTeam' => $userTeam
                         ])
