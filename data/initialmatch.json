@@ -1,0 +1,784 @@
+{
+    "spaces": {
+        "1": {
+            "j": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "9c14d7a8-1015-4d7e-87e0-2f6f94e924fe"
+                },
+                "color": "black"
+            },
+            "i": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "h": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "c170ddf7-0586-46a2-9bfe-b85283ddd726"
+                },
+                "color": "black"
+            },
+            "g": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "f": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "6966daa5-0051-47f4-a420-2b32364067de"
+                },
+                "color": "black"
+            },
+            "e": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "d": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "490cc646-8ef3-4e68-a767-e64092bafaf8"
+                },
+                "color": "black"
+            },
+            "c": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "b": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "a011394c-e1a2-416a-9f27-55156764c6d5"
+                },
+                "color": "black"
+            },
+            "a": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            }
+        },
+        "2": {
+            "j": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "i": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "a3e74c52-1cbf-4a35-be64-e9b0b30670bd"
+                },
+                "color": "black"
+            },
+            "h": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "g": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "c75e7ac3-beed-4be6-8127-00fb4f02739b"
+                },
+                "color": "black"
+            },
+            "f": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "e": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "8605db97-f39e-495b-9539-6480b9e8cab5"
+                },
+                "color": "black"
+            },
+            "d": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "c": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "c6eb581b-540e-4175-8800-017d224972c6"
+                },
+                "color": "black"
+            },
+            "b": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "a": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "3341e803-a6ab-4ad0-807a-7af0c22e66fe"
+                },
+                "color": "black"
+            }
+        },
+        "3": {
+            "j": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "9f262371-e90b-4214-8357-7fc6a363114f"
+                },
+                "color": "black"
+            },
+            "i": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "h": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "347279a5-4fe8-4101-94b9-2c962dd76362"
+                },
+                "color": "black"
+            },
+            "g": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "f": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "3ab11d71-8118-4013-a1e3-2667c4a2e920"
+                },
+                "color": "black"
+            },
+            "e": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "d": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "89c99664-84d0-48f6-85db-85d41c532284"
+                },
+                "color": "black"
+            },
+            "c": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "b": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "09754395-ddab-4a06-b67c-08c02e587a09"
+                },
+                "color": "black"
+            },
+            "a": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            }
+        },
+        "4": {
+            "j": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "i": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "45d953af-c37d-4233-90ec-5c74fc1714a1"
+                },
+                "color": "black"
+            },
+            "h": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "g": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "75850b72-b50a-4ac9-b2eb-ba60762b532f"
+                },
+                "color": "black"
+            },
+            "f": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "e": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "ee41ce75-dd72-4375-b238-a56dc92f12a1"
+                },
+                "color": "black"
+            },
+            "d": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "c": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "543e96d2-b63a-4db1-b645-62fd92c2957b"
+                },
+                "color": "black"
+            },
+            "b": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "a": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 1,
+                    "color": "white",
+                    "id": "74094b8d-5e51-44f8-abfb-efdfddc6985c"
+                },
+                "color": "black"
+            }
+        },
+        "5": {
+            "j": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "black"
+            },
+            "i": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "h": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "black"
+            },
+            "g": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "f": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "black"
+            },
+            "e": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "d": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "black"
+            },
+            "c": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "b": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "black"
+            },
+            "a": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            }
+        },
+        "6": {
+            "j": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "i": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "black"
+            },
+            "h": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "g": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "black"
+            },
+            "f": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "e": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "black"
+            },
+            "d": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "c": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "black"
+            },
+            "b": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "a": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "black"
+            }
+        },
+        "7": {
+            "j": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "58f60495-84d1-44a1-820a-cc83cf4d4866"
+                },
+                "color": "black"
+            },
+            "i": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "h": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "9f35558d-8217-4a66-9f1b-f8e7ef8314b5"
+                },
+                "color": "black"
+            },
+            "g": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "f": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "febf459a-8a7d-4551-a74a-6751e5246217"
+                },
+                "color": "black"
+            },
+            "e": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "d": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "3bbb8ecf-68ab-4daa-93fd-fd2cb1fb5bd3"
+                },
+                "color": "black"
+            },
+            "c": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "b": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "c4ca7d28-33fa-4281-bd8e-fb8efd541792"
+                },
+                "color": "black"
+            },
+            "a": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            }
+        },
+        "8": {
+            "j": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "i": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "fd273435-fa5f-4522-af21-7b23f76f56b2"
+                },
+                "color": "black"
+            },
+            "h": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "g": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "50e72676-e658-4a90-8b73-58fe54f196d7"
+                },
+                "color": "black"
+            },
+            "f": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "e": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "dc16711e-89d3-4128-be5b-3346b6dc535e"
+                },
+                "color": "black"
+            },
+            "d": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "c": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "3ad8e9e1-18ad-4f5f-bd19-f1bca077d153"
+                },
+                "color": "black"
+            },
+            "b": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "a": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "7997d37b-7cb1-4a78-b654-83adffb1e744"
+                },
+                "color": "black"
+            }
+        },
+        "9": {
+            "j": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "fbd08a95-2180-4178-8393-832124e02574"
+                },
+                "color": "black"
+            },
+            "i": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "h": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "b39c83ec-4678-43f9-8eea-51e0986b7365"
+                },
+                "color": "black"
+            },
+            "g": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "f": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "9ecdba3d-78c9-4b88-9fde-39077516d6b0"
+                },
+                "color": "black"
+            },
+            "e": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "d": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "a2ff8e4f-8a64-4223-a725-56ac7c317e48"
+                },
+                "color": "black"
+            },
+            "c": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "b": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "a3a1c1ec-63ed-4e71-96db-fce530d56e00"
+                },
+                "color": "black"
+            },
+            "a": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            }
+        },
+        "10": {
+            "j": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "i": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "2bb03844-2547-43ed-bf24-37281b163177"
+                },
+                "color": "black"
+            },
+            "h": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "g": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "f114b163-a048-49fe-a153-57c63e641e8a"
+                },
+                "color": "black"
+            },
+            "f": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "e": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "98deddfd-a04f-4e44-bd48-c3159c8a67fa"
+                },
+                "color": "black"
+            },
+            "d": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "c": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "8152e53b-f884-4fcd-8804-723c545681d7"
+                },
+                "color": "black"
+            },
+            "b": {
+                "x": null,
+                "y": null,
+                "checker": null,
+                "color": "white"
+            },
+            "a": {
+                "x": null,
+                "y": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "d554c147-a050-4c84-9b41-7735a2fb3b19"
+                },
+                "color": "black"
+            }
+        }
+    }
+}

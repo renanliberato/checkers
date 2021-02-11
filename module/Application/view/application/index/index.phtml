@@ -1,0 +1,46 @@
+<?php
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ */
+?>
+<div id='board-container'>
+    <?=
+    $this->partial('partials/board.phtml', [
+        'board' => $board,
+        'userTeam' => $userTeam
+    ])
+    ?>
+</div>
+
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("id", ev.target.id);
+        ev.dataTransfer.setData("currow", ev.target.parentElement.getAttribute('data-row'));
+        ev.dataTransfer.setData("curcolumn", ev.target.parentElement.getAttribute('data-column'));
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var id = ev.dataTransfer.getData('id');
+        var curRow = ev.dataTransfer.getData("currow");
+        var curColumn = ev.dataTransfer.getData("curcolumn");
+        var row = ev.target.getAttribute('data-row');
+        var column = ev.target.getAttribute('data-column');
+
+        //console.log({id, curRow, curColumn, row, column});
+        ev.target.appendChild(document.getElementById(id));
+        //window.location.href = `/application/index/move?currow=${curRow}&curcolumn=${curColumn}&row=${row}&column=${column}`;
+        fetch(`/application/index/move?currow=${curRow}&curcolumn=${curColumn}&row=${row}&column=${column}`, {
+            method: 'POST'
+        })
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById('board-container').innerHTML = html;
+                })
+        .catch(err => console.error(err));
+    }
+</script>
