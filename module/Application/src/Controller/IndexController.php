@@ -26,7 +26,8 @@ class IndexController extends AbstractActionController {
         return new ViewModel([
             'turn' => $match->getTurn(),
             'match' => $match,
-            'userTeam' => 1
+            'userTeam' => 1,
+            'movements' => $match->getMovements()
         ]);
     }
 
@@ -46,7 +47,8 @@ class IndexController extends AbstractActionController {
         $viewModel = new ViewModel([
             'turn' => $match->getTurn(),
             'match' => $match,
-            'userTeam' => 1
+            'userTeam' => 1,
+            'movements' => $match->getMovements()
         ]);
 
         $viewModel->setTerminal(true);

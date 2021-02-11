@@ -1,4 +1,53 @@
-body, div {
+:root {
+    --nc-bg-1: #312E2B;
+    --nc-bg-4: #272422;
+}
+body, div:not(#laminas-developer-toolbar):not(.laminas-toolbar-entry):not(.laminas-toolbar-preview):not(.laminas-toolbar-detail):not(.laminas-toolbar-info) {
     display: flex;
     flex-direction: column;
+}
+
+body {
+    max-width: inherit;
+    padding: 0;
+}
+
+.left-side {
+    width: 100px;
+    padding: 10px;
+    background: var(--nc-bg-4);
+}
+
+.left-side {
+    text-align: center;
+}
+
+.container {
+    padding: 10px;
+    flex: 1;
+}
+
+.player-bar {
+    flex-direction: row !important;
+    padding: 5px;
+}
+
+.player-bar.turn-to-play {
+    border: 3px solid white;
+    border-radius: 5px;
+}
+
+.player-bar:not(.turn-to-play) {
+    margin: 3px;
+}
+
+.player-bar img {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    margin-bottom: 0;
+}
+
+.player-bar div {
+    margin-left: 10px;
 }

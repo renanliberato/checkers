@@ -4,11 +4,11 @@
  */
 ?>
 <style>
-    
+
     :root {
-        --board-width: 50vw;
-        --space-width: 5vw;
-        --checker-width: 3vw;
+        --board-width: 75vh;
+        --space-width: 7.5vh;
+        --checker-width: 5vh;
     }
     .column-label {
         font-size: 10px;
@@ -17,7 +17,7 @@
         padding-right: 10px;
         text-align: right;
     }
-    
+
     .row-label {
         z-index: 999;
         position: absolute;
@@ -68,15 +68,43 @@
     .checker.white {
         background-color: #F9F9F9;
     }
+
+    #board-inner {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        box-shadow: inset 0 0 3px #000000;
+        padding: 1px;
+        align-self: flex-start;
+        position: relative;
+    }
+    
+    li::marker {
+        font-size: 12px;
+        color: #786959;
+    }
+    
+    li {
+        padding-left: 10px;
+    }
+    
+    .moving {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        background-color: #cecece77
+    }
 </style>
-<a href='/application/index/new'>new</a>
-<div id='board-container'>
+<div id='board-container' style="position: relative;">
     <?=
     $this->partial('partials/board.phtml', [
         'turn' => $turn,
         'checkers' => $match->getCheckers(),
         'possibleMoves' => $match->getPossibleMoves(),
-        'userTeam' => $userTeam
+        'userTeam' => $userTeam,
+        'movements' => $movements
     ])
     ?>
 </div>

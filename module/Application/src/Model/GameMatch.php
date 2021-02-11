@@ -52,6 +52,11 @@ class GameMatch implements \JsonSerializable {
         return $this->board->possibleMoves;
     }
     
+    public function getMovements()
+    {
+        return $this->movements;
+    }
+    
     public function move($from, $to) {
         $move = new \Photogabble\Draughts\Move();
         $move->from = $from;
@@ -64,6 +69,7 @@ class GameMatch implements \JsonSerializable {
         }, $this->validator->generateMoves());
 
         if ($moveResult != null) {
+            $this->movements[] = ['from' => $from, 'to' => $to];
             $this->board->checkers[$to] = $this->board->checkers[$from];
             $this->board->checkers[$to]->position = $to;
             unset($this->board->checkers[$from]);
