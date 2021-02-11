@@ -3,7 +3,7 @@ $checker = isset($checkers[$position]) ? $checkers[$position] : null;
 $canMove = array_search($position, $possibleMoves) !== false;
 ?>
 
-<?php if ($checker): echo $position; ?>
+<?php if ($checker): ?>
     <div
         data-canmoveto='[]'
         data-position='<?= $checker->position ?>'

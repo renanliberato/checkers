@@ -18,32 +18,35 @@ $boardDefinition = [
 ];
 $posCounter = 1;
 ?>
-<div id="board" style="box-shadow: inset 0 0 3px #000000; width: 640px; padding: 10px;">
+<div id="board">
     <span>Turn: <?= $turn; ?></span>
-    <div style="display: flex; margin-left: 20px; margin-bottom: 10px;">
-        <?php foreach (['j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'] as $columnKey): ?>
-            <span style="padding-left: 30px; width: 60px; height: 15px;"><?= $columnKey ?></span>
-        <?php endforeach; ?>
-    </div>
-    <?php foreach ($boardDefinition as $rowKey => $row): ?>
-        <div style="display: flex;">
-            <span style="width: 20px; padding-top: 20px;"><?= $rowKey + 1 ?></span>
-            <?php foreach ($row as $type): ?>
-                <?php if ($type == 0): ?>
-                    <div class="space black" data-position='<?= $posCounter ?>' ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <?=
-                        $this->partial('partials/checker.phtml', [
-                            'possibleMoves' => $possibleMoves,
-                            'checkers' => $checkers,
-                            'position' => $posCounter++,
-                            'userTeam' => $userTeam
-                        ])
-                        ?>
-                    </div>
-                <?php else: ?>
-                    <div class="space white"></div>
-                <?php endif; ?>
+    <div style="box-shadow: inset 0 0 3px #000000; padding: 1px; width: 50vw; height: 50vw; position: relative;">
+
+        <div style="z-index: 999; position: absolute; bottom: 0; left: 0; right: 0; flex-direction: row; justify-content: space-around;">
+            <?php foreach (['j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'] as $columnKey): ?>
+                <span class="column-label"><?= $columnKey ?></span>
             <?php endforeach; ?>
         </div>
-    <?php endforeach; ?>
+        <?php foreach ($boardDefinition as $rowKey => $row): ?>
+            <div style="flex-direction: row; position: relative;">
+                <span class="row-label"><?= $rowKey + 1 ?></span>
+                <?php foreach ($row as $type): ?>
+                    <?php if ($type == 0): ?>
+                        <div class="space black" data-position='<?= $posCounter ?>' ondrop="drop(event)" ondragover="allowDrop(event)">
+                            <?=
+                            $this->partial('partials/checker.phtml', [
+                                'possibleMoves' => $possibleMoves,
+                                'checkers' => $checkers,
+                                'position' => $posCounter++,
+                                'userTeam' => $userTeam
+                            ])
+                            ?>
+                        </div>
+                    <?php else: ?>
+                        <div class="space white"></div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </div>
