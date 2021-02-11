@@ -14,8 +14,20 @@ namespace Application\Model;
  * @author renan
  */
 class Board {
+    
+    /**
+     * @var Checker
+     */
     public $checkers;
+    
+    /**
+     * @var string
+     */
     public $fen;
+    
+    /**
+     * @var array
+     */
     public $possibleMoves;
     
     public function __construct()

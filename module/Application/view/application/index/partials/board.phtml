@@ -27,6 +27,18 @@ $posCounter = 1;
             </div>
         </div>
         <div id="board-inner">
+            <?php if ($result !== null): ?>
+                <div class="result-container">
+                    <div class='result'>
+                        <?php if ($result == 'win'): ?>
+                            <span>YOU WIN!</span>
+                        <?php else: ?>
+                            <span>YOU LOSE!</span>
+                        <?php endif; ?>
+                        <a style='margin-top: 10px;' href="/application/index/new"><button style='padding: 10px 20px;'>Play again!</button></a>
+                    </div>
+                </div>
+            <?php endif; ?>
             <div style="z-index: 999; position: absolute; bottom: 0; left: 0; right: 0; flex-direction: row; justify-content: space-around;">
                 <?php foreach (['j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'] as $columnKey): ?>
                     <span class="column-label"><?= $columnKey ?></span>

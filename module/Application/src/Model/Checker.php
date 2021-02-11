@@ -15,23 +15,32 @@ namespace Application\Model;
  */
 class Checker {
 
+    /**
+     * 'b' or 'w'
+     * @var string
+     */
     public $team;
+    
+    /**
+     * 'black' or 'white'
+     * @var string
+     */
     public $color;
+    
+    /**
+     * @var string
+     */
     public $id;
+    
+    /**
+     * @var int
+     */
     public $position;
-    public $canMoveTo;
-
+    
     public function __construct($color, $id, $position) {
         $this->id = $id == null ? (\Ramsey\Uuid\Uuid::uuid4())->toString() : $id;
         $this->color = $color;
         $this->team = $color[0];
         $this->position = $position;
-    }
-
-    public function updatePossibleMovements($board) {
-        $this->canMoveTo = $this->getPossibleMovements($board);
-    }
-
-    private function getPossibleMovements($board) {
     }
 }

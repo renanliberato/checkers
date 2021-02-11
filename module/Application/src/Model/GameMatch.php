@@ -15,7 +15,15 @@ namespace Application\Model;
  */
 class GameMatch implements \JsonSerializable {
 
+    /**
+     * @var string
+     */
     private $id;
+    
+    /**
+     * 
+     * @var array
+     */
     private $movements;
     /**
      * 
@@ -55,6 +63,25 @@ class GameMatch implements \JsonSerializable {
     public function getMovements()
     {
         return $this->movements;
+    }
+    
+    public function getResult() {
+        $checkers = $this->getCheckers();
+        $checkersCount = count($checkers);
+        
+        $result = array_reduce($checkers, function($res, $checker) {
+            $res[$checker->team]++;
+            
+            return $res;
+        }, ['b' => 0, 'w' => 0]);
+        
+        if ($checkersCount == $result['b'])
+            return 'lose';
+        
+        if ($checkersCount == $result['w'])
+            return 'win';
+        
+        return null;
     }
     
     public function move($from, $to) {
