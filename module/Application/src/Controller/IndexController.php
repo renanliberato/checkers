@@ -16,7 +16,6 @@ class IndexController extends AbstractActionController {
 
     public function indexAction() {
         $board = $this->getBoard();
-
         return new ViewModel([
             'board' => $board,
             'userTeam' => 1
@@ -24,18 +23,32 @@ class IndexController extends AbstractActionController {
     }
 
     public function moveAction() {
-        $curRow = $this->params()->fromQuery('currow');
-        $curColumn = $this->params()->fromQuery('curcolumn');
-        $row = $this->params()->fromQuery('row');
-        $column = $this->params()->fromQuery('column');
+        $from = (int) $this->params()->fromQuery('curposition');
+        $to = (int) $this->params()->fromQuery('position');
 
         $board = $this->getBoard();
 
-        if ($board->spaces[$row][$column]->checker == null) {
-            $board->spaces[$row][$column]->checker = $board->spaces[$curRow][$curColumn]->checker;
-            $board->spaces[$curRow][$curColumn]->checker = null;
+        $move = new \Photogabble\Draughts\Move();
+        $move->from = $from;
+        $move->to = $to;
 
-            file_put_contents('./data/match.json', json_encode($board, JSON_PRETTY_PRINT));
+        $moveResult = $board->validator->move($move);
+        
+        $board->possibleMoves = array_map(function($move) {
+            return $move->from;
+        }, $board->validator->generateMoves());
+        
+        if ($moveResult != null) {
+            $board->checkers[$to] = $board->checkers[$from];
+            $board->checkers[$to]->position = $to;
+            unset($board->checkers[$from]);
+
+            foreach ($moveResult->takes as $takePosition) {
+                unset($board->checkers[$takePosition]);
+            }
+            
+            file_put_contents('./data/fen.txt', $board->validator->generateFen());
+            file_put_contents('./data/checkers.json', json_encode($board->checkers, JSON_PRETTY_PRINT));
         }
 
         $viewModel = new ViewModel([
@@ -48,27 +61,48 @@ class IndexController extends AbstractActionController {
         return $viewModel;
     }
 
-    private function getBoard() {
-        $savedMatch = json_decode(file_get_contents('./data/match.json'), true);
-        $board = new \Application\Model\Board();
-
-        $board->spaces = $savedMatch['spaces'];
-
-        foreach ($board->spaces as $rowKey => $row) {
-            foreach ($row as $columnKey => $spaceData) {
-                $board->spaces[$rowKey][$columnKey] = new \Application\Model\Space(
-                        $spaceData['color'],
-                        $spaceData['checker'] == null ? null : new \Application\Model\Checker($spaceData['checker']['color'], $spaceData['checker']['team'], $spaceData['checker']['id'], $rowKey, $columnKey)
-                );
-                
-                if ($board->spaces[$rowKey][$columnKey]->checker != null)
-                    $board->checkers[] = $board->spaces[$rowKey][$columnKey]->checker;
-            }
-        }
+    public function newAction() {
+        $this->createBoard();
         
-        foreach ($board->checkers as $checker) {
-            $checker->updatePossibleMovements($board);
+        return $this->redirect()->toUrl('/');
+    }
+
+    private function getAsciiBoard() {
+        $board = new \Photogabble\Draughts\Draughts(file_get_contents('./data/fen.txt'));
+
+        return $board;
+    }
+
+    private function getBoard() {
+        $board = new \Application\Model\Board();
+        $board->validator = $this->getAsciiBoard();
+        $checkersJson = json_decode(file_get_contents('./data/checkers.json'), true);
+
+        $board->possibleMoves = array_map(function($move) {
+            return $move->from;
+        }, $board->validator->generateMoves());
+        
+        foreach (array_values($checkersJson) as $checker) {
+            $board->checkers[$checker['position']] = new \Application\Model\Checker($checker['color'], $checker['id'], $checker['position']);
         }
+
+        return $board;
+    }
+
+    private function createBoard() {
+        $board = new \Application\Model\Board();
+        $board->validator = new \Photogabble\Draughts\Draughts();
+
+        array_map(function ($i) use ($board) {
+            $board->checkers[$i] = new \Application\Model\Checker('black', \Ramsey\Uuid\Uuid::uuid4()->toString(), $i);
+        }, range(1, 20));
+
+        array_map(function ($i) use ($board) {
+            $board->checkers[$i] = new \Application\Model\Checker('white', \Ramsey\Uuid\Uuid::uuid4()->toString(), $i);
+        }, range(31, 50));
+
+        file_put_contents('./data/fen.txt', $board->validator->generateFen());
+        file_put_contents('./data/checkers.json', json_encode($board->checkers, JSON_PRETTY_PRINT));
 
         return $board;
     }

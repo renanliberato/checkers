@@ -3,6 +3,52 @@
  * @var Laminas\View\Renderer\PhpRenderer $this
  */
 ?>
+<style>
+    .space {
+        position: relative;
+        width: 60px;
+        height: 60px;
+    }
+
+    .space.white {
+        background-color: #cccccc;
+    }
+
+    .space.black {
+        background-color: #555555;
+    }
+
+    .checker {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        box-shadow: inset 0 0 3px #000000;
+    }
+
+    @keyframes highlightchecker {
+        0% {transform: scale(1)} 60% {transform: scale(1)} 70%{transform: scale(1.1)} 100%{transform: scale(1.0)}
+    }
+
+    .checker.movable {
+        cursor: pointer;
+        animation: 2s linear 5s infinite normal highlightchecker;
+        animation-iteration-count:infinite;
+    }
+
+    .checker.black {
+        background-color: #000000;
+    }
+
+    .checker.white {
+        background-color: #ffffff;
+    }
+</style>
+<a href='/application/index/new'>new</a>
 <div id='board-container'>
     <?=
     $this->partial('partials/board.phtml', [
@@ -15,10 +61,10 @@
 <script>
     var possibleMovementsFromDragging;
     function allowDrop(ev) {
-        const destinySpaceId = ev.srcElement.id;
-        console.log(possibleMovementsFromDragging, destinySpaceId)
-        if (possibleMovementsFromDragging.includes(destinySpaceId))
-            ev.preventDefault();
+        ev.preventDefault();
+        /*const destinySpaceId = ev.srcElement.id;
+         if (possibleMovementsFromDragging.includes(destinySpaceId))
+         ev.preventDefault();*/
     }
 
     function drag(ev) {
@@ -26,29 +72,26 @@
         possibleMovementsFromDragging = possibleMovementsFromDragging.map(movement => {
             return `space${movement.row}${movement.column}`;
         });
-        console.log(possibleMovementsFromDragging);
+
         ev.dataTransfer.setData("id", ev.target.id);
-        ev.dataTransfer.setData("currow", ev.target.parentElement.getAttribute('data-row'));
-        ev.dataTransfer.setData("curcolumn", ev.target.parentElement.getAttribute('data-column'));
+        ev.dataTransfer.setData("position", ev.target.getAttribute('data-position'));
     }
 
     function drop(ev) {
         ev.preventDefault();
         var id = ev.dataTransfer.getData('id');
-        var curRow = ev.dataTransfer.getData("currow");
-        var curColumn = ev.dataTransfer.getData("curcolumn");
-        var row = ev.target.getAttribute('data-row');
-        var column = ev.target.getAttribute('data-column');
+        var curPosition = ev.dataTransfer.getData("position");
+        var position = ev.target.getAttribute('data-position');
 
-        ev.target.appendChild(document.getElementById(id));
+        //ev.target.appendChild(document.getElementById(id));
         //window.location.href = `/application/index/move?currow=${curRow}&curcolumn=${curColumn}&row=${row}&column=${column}`;
-        fetch(`/application/index/move?currow=${curRow}&curcolumn=${curColumn}&row=${row}&column=${column}`, {
+        fetch(`/application/index/move?curposition=${curPosition}&position=${position}`, {
             method: 'POST'
         })
                 .then(res => res.text())
                 .then(html => {
                     document.getElementById('board-container').innerHTML = html;
                 })
-        .catch(err => console.error(err));
+                .catch(err => console.error(err));
     }
 </script>

@@ -1,22 +1,47 @@
+<?php
+
+function positionToClass($row, $column) {
+    return ($row + $column) % 2 == 0 ? 'black' : 'white';
+}
+
+$boardDefinition = [
+    [1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+    [0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+    [1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+    [0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+    [1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+    [0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+    [1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+    [0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+    [1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+    [0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+];
+$posCounter = 1;
+?>
 <div id="board" style="box-shadow: inset 0 0 3px #000000; width: 640px; padding: 10px;">
+    <span>Turn: <?= $board->validator->turn(); ?></span>
     <div style="display: flex; margin-left: 20px; margin-bottom: 10px;">
-        <?php foreach ($board->spaces[1] as $columnKey => $column): ?>
-        <span style="padding-left: 30px; width: 60px; height: 15px;"><?= $columnKey ?></span>
+        <?php foreach (['j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'] as $columnKey): ?>
+            <span style="padding-left: 30px; width: 60px; height: 15px;"><?= $columnKey ?></span>
         <?php endforeach; ?>
     </div>
-    <?php foreach ($board->spaces as $rowKey => $row): ?>
+    <?php foreach ($boardDefinition as $rowKey => $row): ?>
         <div style="display: flex;">
-            <span style="width: 20px; padding-top: 20px;"><?= $rowKey ?></span>
-            <?php foreach ($row as $columnKey => $space): ?>
-                <div data-row='<?= $rowKey ?>' data-column='<?= $columnKey ?>' id='space<?= $rowKey ?><?= $columnKey ?>' style="position: relative; width: 60px; height: 60px; background-color: <?= $space->color == 'black' ? '#222222' : '#eeeeee' ?>" <?= $space->color == 'black' ? 'ondrop="drop(event)" ondragover="allowDrop(event)"' : '' ?>>
-                    <?php if ($space->checker != null): ?>
-                        <div
-                            data-canmoveto='<?= json_encode($space->checker->canMoveTo) ?>'
-                            id='checker<?= $space->checker->id ?>'
-                            <?= $space->checker->team == $userTeam ? 'draggable="true"' : '' ?> ondragstart="drag(event)"
-                            style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; width: 40px; height: 40px; border-radius: 20px; background-color: <?= $space->checker->color ?>; box-shadow: inset 0 0 3px #000000; <?= $space->checker->team == $userTeam ? 'cursor: pointer' : '' ?>"></div>
-                    <?php endif; ?>
-                </div>
+            <span style="width: 20px; padding-top: 20px;"><?= $rowKey + 1 ?></span>
+            <?php foreach ($row as $type): ?>
+                <?php if ($type == 0): ?>
+                    <div class="space black" data-position='<?= $posCounter ?>' ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <?=
+                        $this->partial('partials/checker.phtml', [
+                            'board' => $board,
+                            'position' => $posCounter++,
+                            'userTeam' => $userTeam
+                        ])
+                        ?>
+                    </div>
+                <?php else: ?>
+                    <div class="space white"></div>
+                <?php endif; ?>
             <?php endforeach; ?>
         </div>
     <?php endforeach; ?>

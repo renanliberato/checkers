@@ -15,8 +15,7 @@ namespace Application\Model;
  */
 class Space {
 
-    public $x;
-    public $y;
+    public $position;
     public $checker;
     public $color;
 

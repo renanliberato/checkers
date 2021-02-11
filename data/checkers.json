@@ -1,0 +1,226 @@
+{
+    "1": {
+        "team": "b",
+        "color": "black",
+        "id": "c184a454-b591-46b4-9f7d-7c67c98dbbf5",
+        "position": 1,
+        "canMoveTo": null
+    },
+    "2": {
+        "team": "b",
+        "color": "black",
+        "id": "11edc23d-87da-4b89-a8e0-5fccada27fb1",
+        "position": 2,
+        "canMoveTo": null
+    },
+    "3": {
+        "team": "b",
+        "color": "black",
+        "id": "a57965a7-9099-425b-9a6e-1d0b4f244a17",
+        "position": 3,
+        "canMoveTo": null
+    },
+    "4": {
+        "team": "b",
+        "color": "black",
+        "id": "419876a2-aeb6-427f-aa0f-f6720dfd370e",
+        "position": 4,
+        "canMoveTo": null
+    },
+    "5": {
+        "team": "b",
+        "color": "black",
+        "id": "65080627-582f-43da-9d07-8e62691d0728",
+        "position": 5,
+        "canMoveTo": null
+    },
+    "6": {
+        "team": "b",
+        "color": "black",
+        "id": "2952f5cd-6ab3-4aa3-a1e1-0ba9c9f59f17",
+        "position": 6,
+        "canMoveTo": null
+    },
+    "8": {
+        "team": "b",
+        "color": "black",
+        "id": "cc22f872-ea8c-452d-ae35-a7e35dca4f18",
+        "position": 8,
+        "canMoveTo": null
+    },
+    "9": {
+        "team": "b",
+        "color": "black",
+        "id": "a9651b15-ead1-4659-9af0-46fbeca1983f",
+        "position": 9,
+        "canMoveTo": null
+    },
+    "10": {
+        "team": "b",
+        "color": "black",
+        "id": "22dbb909-90ba-4211-82f4-195d967a394c",
+        "position": 10,
+        "canMoveTo": null
+    },
+    "13": {
+        "team": "b",
+        "color": "black",
+        "id": "203df5f4-70f7-443d-83b9-8c71921e4d19",
+        "position": 13,
+        "canMoveTo": null
+    },
+    "14": {
+        "team": "b",
+        "color": "black",
+        "id": "16bdcf2d-6224-4c3e-8fa2-65887d60eab2",
+        "position": 14,
+        "canMoveTo": null
+    },
+    "15": {
+        "team": "b",
+        "color": "black",
+        "id": "dc93934d-b9e1-4ae0-a431-15ff34fee715",
+        "position": 15,
+        "canMoveTo": null
+    },
+    "18": {
+        "team": "b",
+        "color": "black",
+        "id": "d7a77bda-112f-4f44-8bab-c34a1ae49274",
+        "position": 18,
+        "canMoveTo": null
+    },
+    "19": {
+        "team": "b",
+        "color": "black",
+        "id": "c5422676-7c95-4e36-a5cc-16ff02cdcd43",
+        "position": 19,
+        "canMoveTo": null
+    },
+    "20": {
+        "team": "b",
+        "color": "black",
+        "id": "b5a514e3-b027-453f-8236-634f1a6ebdf0",
+        "position": 20,
+        "canMoveTo": null
+    },
+    "34": {
+        "team": "w",
+        "color": "white",
+        "id": "1b528aa4-b8f0-402f-aa09-8748dc77c634",
+        "position": 34,
+        "canMoveTo": null
+    },
+    "35": {
+        "team": "w",
+        "color": "white",
+        "id": "b794babd-f199-4df3-b663-fd482d882a01",
+        "position": 35,
+        "canMoveTo": null
+    },
+    "36": {
+        "team": "w",
+        "color": "white",
+        "id": "eb175cd0-3ba1-484e-9c8b-2e617a8e5412",
+        "position": 36,
+        "canMoveTo": null
+    },
+    "40": {
+        "team": "w",
+        "color": "white",
+        "id": "aa522070-8614-4d1c-b408-a1f935d39380",
+        "position": 40,
+        "canMoveTo": null
+    },
+    "41": {
+        "team": "w",
+        "color": "white",
+        "id": "98677a77-c76d-485d-bf4a-272b30fa8d18",
+        "position": 41,
+        "canMoveTo": null
+    },
+    "42": {
+        "team": "w",
+        "color": "white",
+        "id": "18c6adcd-b25d-43ae-8e62-7957ced24e01",
+        "position": 42,
+        "canMoveTo": null
+    },
+    "43": {
+        "team": "w",
+        "color": "white",
+        "id": "22c097c0-936a-4bf4-94a9-e22e7b98cb28",
+        "position": 43,
+        "canMoveTo": null
+    },
+    "44": {
+        "team": "w",
+        "color": "white",
+        "id": "1e83a286-10a9-416f-b256-71c1f8ee112a",
+        "position": 44,
+        "canMoveTo": null
+    },
+    "45": {
+        "team": "w",
+        "color": "white",
+        "id": "551d2f77-3845-4f16-9460-0fc9b775d98b",
+        "position": 45,
+        "canMoveTo": null
+    },
+    "46": {
+        "team": "w",
+        "color": "white",
+        "id": "57b55290-3889-45df-b97b-ddd547f83639",
+        "position": 46,
+        "canMoveTo": null
+    },
+    "47": {
+        "team": "w",
+        "color": "white",
+        "id": "069ecf03-06d7-405f-a50e-8560ed262f28",
+        "position": 47,
+        "canMoveTo": null
+    },
+    "48": {
+        "team": "w",
+        "color": "white",
+        "id": "8d852fe1-4ff9-40d6-b6d2-b48ffcae03a3",
+        "position": 48,
+        "canMoveTo": null
+    },
+    "49": {
+        "team": "w",
+        "color": "white",
+        "id": "128adc42-79cd-40e1-970f-c674b07f711e",
+        "position": 49,
+        "canMoveTo": null
+    },
+    "50": {
+        "team": "w",
+        "color": "white",
+        "id": "97a85c9f-7fec-4cfd-9321-b6f61765a958",
+        "position": 50,
+        "canMoveTo": null
+    },
+    "16": {
+        "team": "b",
+        "color": "black",
+        "id": "19cbceff-97b9-4f07-8e48-3704b9a6d6a4",
+        "position": 16,
+        "canMoveTo": null
+    },
+    "32": {
+        "team": "w",
+        "color": "white",
+        "id": "baac13c7-3bb3-4dae-843a-d9dbd0d61b4e",
+        "position": 32,
+        "canMoveTo": null
+    },
+    "28": {
+        "team": "w",
+        "color": "white",
+        "id": "0c415510-297b-49d1-b8ce-328fa4490dcb",
+        "position": 28,
+        "canMoveTo": null
+    }
+}

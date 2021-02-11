@@ -1,0 +1,13 @@
+<?php
+$checker = isset($board->checkers[$position]) ? $board->checkers[$position] : null;
+$canMove = array_search($position, $board->possibleMoves) !== false;
+?>
+
+<?php if ($checker): echo $position; ?>
+    <div
+        data-canmoveto='[]'
+        data-position='<?= $checker->position ?>'
+        id='checker<?= $checker->position ?>'
+        <?= $canMove ? 'draggable="true" ondragstart="drag(event)" ' : '' ?>
+        class='checker <?= $canMove ? 'movable' : '' ?> <?= $checker->color ?>'></div>
+<?php endif; ?>

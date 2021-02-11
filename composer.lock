@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1841fadffbcde6b4967e4ef1f7468db",
+    "content-hash": "2067e3456b5612e0e6d3cf64374b02ec",
     "packages": [
         {
             "name": "brick/math",
@@ -3402,6 +3402,51 @@
             "time": "2020-12-20T10:01:03+00:00"
         },
         {
+            "name": "photogabble/draughts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/photogabble/draughts.git",
+                "reference": "5f1c4281827423cafa1a286bc210e82d87e2ab42"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/photogabble/draughts/zipball/5f1c4281827423cafa1a286bc210e82d87e2ab42",
+                "reference": "5f1c4281827423cafa1a286bc210e82d87e2ab42",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "6.*|7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Photogabble\\Draughts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Dann",
+                    "email": "simon.dann@gmail.com",
+                    "homepage": "https://www.photogabble.co.uk"
+                }
+            ],
+            "description": "PHP port of shubhendusaurabh/draughts.js",
+            "keywords": [
+                "Board Game",
+                "checkers",
+                "draughts"
+            ],
+            "time": "2018-11-27T10:46:18+00:00"
+        },
+        {
             "name": "psr/cache",
             "version": "1.0.1",
             "source": {
@@ -6004,7 +6049,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "photogabble/draughts": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
