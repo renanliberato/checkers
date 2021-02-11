@@ -495,7 +495,14 @@
             "i": {
                 "x": null,
                 "y": null,
-                "checker": null,
+                "checker": {
+                    "team": 2,
+                    "color": "black",
+                    "id": "fd273435-fa5f-4522-af21-7b23f76f56b2",
+                    "row": 6,
+                    "column": "i",
+                    "canMoveTo": null
+                },
                 "color": "black"
             },
             "h": {
@@ -680,14 +687,7 @@
             "i": {
                 "x": null,
                 "y": null,
-                "checker": {
-                    "team": 2,
-                    "color": "black",
-                    "id": "fd273435-fa5f-4522-af21-7b23f76f56b2",
-                    "row": 8,
-                    "column": "i",
-                    "canMoveTo": null
-                },
+                "checker": null,
                 "color": "black"
             },
             "h": {
