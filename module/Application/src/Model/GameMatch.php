@@ -169,6 +169,9 @@ class GameMatch implements \JsonSerializable {
         $match->board = $board;
         $match->movements = $data['movements'];
 
+        if ($match->getTurn() == 'b')
+            $match->aiMove();
+        
         return $match;
     }
 
