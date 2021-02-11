@@ -77,16 +77,16 @@
         align-self: flex-start;
         position: relative;
     }
-    
+
     li::marker {
         font-size: 12px;
         color: #786959;
     }
-    
+
     li {
         padding-left: 10px;
     }
-    
+
     .moving {
         position: absolute;
         top: 0;
@@ -96,7 +96,7 @@
         z-index: 9999;
         background-color: #cecece77;
     }
-    
+
     .result-container {
         position: absolute;
         top: 0;
@@ -109,7 +109,7 @@
         align-self: center;
         padding: 40px;
     }
-    
+
     .result {
         font-weight: bold;
         border-radius: 10px;
@@ -157,17 +157,33 @@
         var id = ev.dataTransfer.getData('id');
         var curPosition = ev.dataTransfer.getData("position");
         var position = ev.target.getAttribute('data-position');
-        var match = (new URLSearchParams(document.location.search)).get('match');
 
+        if (curPosition == position) {
+            return;
+        }
+        var match = (new URLSearchParams(document.location.search)).get('match');
         //ev.target.appendChild(document.getElementById(id));
         //window.location.href = `/application/index/move?currow=${curRow}&curcolumn=${curColumn}&row=${row}&column=${column}`;
         fetch(`/application/index/move?match=${match}&curposition=${curPosition}&position=${position}`, {
             method: 'POST'
         })
-                .then(res => res.text())
+                .then(res => {
+                    if (!res.ok) {
+                        throw new Error("invalid move");
+                    }
+                    
+                    return res.text();
+                })
                 .then(html => {
                     document.getElementById('board-container').innerHTML = html;
+                    setTimeout(() => {
+                        fetch(`/application/index/aimove?match=${match}`)
+                                .then(res => res.text())
+                                .then(html => {
+                                    document.getElementById('board-container').innerHTML = html;
+                                });
+                    }, 1000);
                 })
-                .catch(err => console.error(err));
+                .catch(err => console.log(err.message));
     }
 </script>
