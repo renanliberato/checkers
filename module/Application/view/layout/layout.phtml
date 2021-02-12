@@ -31,9 +31,10 @@
         <div style="flex-direction: row; height: 100vh;">
             <div class="left-side">
                 <p>Checkers game</p>
-                <a style="margin-left: -3px;" href="/checkers/application/index/new"><button>New game</button></a>
+                <a style="margin-left: -3px;" href="<?= $this->url('application', [ 'action' => 'new']) ?>"><button>New game</button></a>
                 <div style="flex: 1;"></div>
                 <p>Made with s2 by <a href="https://renanliberato.com.br">Renan Liberato</a></p>
+                <p>Check the <a href="https://github.com/renanliberato/checkers">source code</a></p>
             </div>
             <div class="container">
                 <?= $this->content ?>

@@ -21,7 +21,7 @@ $posCounter = 1;
 <div style="flex-direction: row; flex: 1;">
     <div id="board">
         <div class="player-bar <?= $turn == \Application\Model\Teams::B ? 'turn-to-play' : '' ?>">
-            <img src="/checkers/img/user.jfif"/>
+            <img src="<?= $this->basePath('img/user.jfif') ?>"/>
             <div>
                 <p>Opponent</p>
             </div>
@@ -66,8 +66,8 @@ $posCounter = 1;
                 </div>
             <?php endforeach; ?>
         </div>
-        <div class="player-bar <?= $turn == 'w' ? 'turn-to-play' : '' ?>">
-            <img src="/checkers/img/user.jfif"/>
+        <div class="player-bar <?= $turn == \Application\Model\Teams::W ? 'turn-to-play' : '' ?>">
+            <img src="<?= $this->basePath('img/user.jfif') ?>"/>
             <div>
                 <p>You</p>
             </div>
