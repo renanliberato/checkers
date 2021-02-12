@@ -174,7 +174,7 @@
         disableMovementDiv.style.display = 'flex';
         //ev.target.appendChild(document.getElementById(id));
         //window.location.href = `/application/index/move?currow=${curRow}&curcolumn=${curColumn}&row=${row}&column=${column}`;
-        fetch(`/application/index/move?match=${match}&curposition=${curPosition}&position=${position}`, {
+        fetch(`/checkers/application/index/move?match=${match}&curposition=${curPosition}&position=${position}`, {
             method: 'POST'
         })
                 .then(res => {
@@ -189,7 +189,7 @@
                     document.getElementById('board-container').innerHTML = html;
 
                     setTimeout(() => {
-                        fetch(`/application/index/aimove?match=${match}`)
+                        fetch(`/checkers/application/index/aimove?match=${match}`)
                                 .then(res => {
                                     if (!res.ok) {
                                         disableMovementDiv.style.display = 'none';

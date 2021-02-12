@@ -13,5 +13,6 @@
  */
 
 return [
+    'url' => '/checkers'
     // ...
 ];
