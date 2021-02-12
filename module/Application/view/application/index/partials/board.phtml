@@ -27,6 +27,7 @@ $posCounter = 1;
             </div>
         </div>
         <div id="board-inner">
+            <div id='disable-movement' style='display: none;'></div>
             <?php if ($result !== null): ?>
                 <div class="result-container">
                     <div class='result'>
@@ -55,7 +56,6 @@ $posCounter = 1;
                                     'possibleMoves' => $possibleMoves,
                                     'checkers' => $checkers,
                                     'position' => $posCounter++,
-                                    'userTeam' => $userTeam
                                 ])
                                 ?>
                             </div>
@@ -82,8 +82,5 @@ $posCounter = 1;
                 </li>
             <?php endforeach; ?>
         </ol>
-    </div>
-    <div style="width: 160px; margin-left: 10px;">
-        ads
     </div>
 </div>

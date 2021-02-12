@@ -83,6 +83,9 @@ class GameMatch implements \JsonSerializable {
     }
 
     public function aiMove() {
+        if ($this->getTurn() != 'b')
+            throw new \Exception("not AI's turn");
+        
         $moves = $this->validator->generateMoves();
         $move = $moves[array_rand($moves, 1)];
         $from = $move->from;
@@ -95,7 +98,7 @@ class GameMatch implements \JsonSerializable {
         }, $this->validator->generateMoves());
 
         if ($moveResult == null) {
-            return false;
+            throw new \Exception('Invalid move');
         }
 
         $this->movements[] = ['from' => $from, 'to' => $to];
@@ -110,8 +113,6 @@ class GameMatch implements \JsonSerializable {
         $this->board->fen = $this->validator->generateFen();
 
         file_put_contents('./data/match_' . $this->id . '.json', json_encode($this));
-
-        return true;
     }
 
     public function move($from, $to) {
@@ -126,7 +127,7 @@ class GameMatch implements \JsonSerializable {
         }, $this->validator->generateMoves());
 
         if ($moveResult == null) {
-            return false;
+            throw new \Exception('Invalid move');
         }
 
         $this->movements[] = ['from' => $from, 'to' => $to];
@@ -141,8 +142,6 @@ class GameMatch implements \JsonSerializable {
         $this->board->fen = $this->validator->generateFen();
 
         file_put_contents('./data/match_' . $this->id . '.json', json_encode($this));
-
-        return true;
     }
 
     public static function get($id) {
@@ -168,9 +167,6 @@ class GameMatch implements \JsonSerializable {
         }
         $match->board = $board;
         $match->movements = $data['movements'];
-
-        if ($match->getTurn() == 'b')
-            $match->aiMove();
         
         return $match;
     }

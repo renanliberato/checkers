@@ -4,7 +4,6 @@ $this->partial('partials/board.phtml', [
     'turn' => $turn,
     'checkers' => $match->getCheckers(),
     'possibleMoves' => $match->getPossibleMoves(),
-    'userTeam' => $userTeam,
     'movements' => $movements,
     'result' => $match->getResult(),
 ])

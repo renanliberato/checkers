@@ -119,6 +119,15 @@
         color: white;
         padding: 40px;
     }
+
+    #disable-movement {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+    }
 </style>
 <div id='board-container' style="position: relative;">
     <?=
@@ -126,7 +135,6 @@
         'turn' => $turn,
         'checkers' => $match->getCheckers(),
         'possibleMoves' => $match->getPossibleMoves(),
-        'userTeam' => $userTeam,
         'movements' => $movements,
         'result' => $match->getResult()
     ])
@@ -162,25 +170,36 @@
             return;
         }
         var match = (new URLSearchParams(document.location.search)).get('match');
+        var disableMovementDiv = document.getElementById('disable-movement');
+        disableMovementDiv.style.display = 'flex';
         //ev.target.appendChild(document.getElementById(id));
         //window.location.href = `/application/index/move?currow=${curRow}&curcolumn=${curColumn}&row=${row}&column=${column}`;
         fetch(`/application/index/move?match=${match}&curposition=${curPosition}&position=${position}`, {
             method: 'POST'
         })
                 .then(res => {
+                    disableMovementDiv.style.display = 'none';
                     if (!res.ok) {
                         throw new Error("invalid move");
                     }
-                    
+
                     return res.text();
                 })
                 .then(html => {
                     document.getElementById('board-container').innerHTML = html;
+
                     setTimeout(() => {
                         fetch(`/application/index/aimove?match=${match}`)
-                                .then(res => res.text())
+                                .then(res => {
+                                    if (!res.ok) {
+                                        disableMovementDiv.style.display = 'none';
+                                        throw new Error('ai could not move');
+                                    }
+                                    return res.text();
+                                })
                                 .then(html => {
                                     document.getElementById('board-container').innerHTML = html;
+                                    disableMovementDiv.style.display = 'none';
                                 });
                     }, 1000);
                 })

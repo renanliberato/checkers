@@ -26,12 +26,7 @@ class IndexController extends AbstractActionController {
         if ($match->getTurn() == 'b')
             $match->aiMove();
 
-        return new ViewModel([
-            'turn' => $match->getTurn(),
-            'match' => $match,
-            'userTeam' => 1,
-            'movements' => $match->getMovements()
-        ]);
+        return new \Application\ViewModel\MatchViewModel($match);
     }
 
     public function aimoveAction() {
@@ -45,12 +40,7 @@ class IndexController extends AbstractActionController {
         
         $match->aiMove();
         
-        $viewModel = new ViewModel([
-            'turn' => $match->getTurn(),
-            'match' => $match,
-            'userTeam' => 1,
-            'movements' => $match->getMovements()
-        ]);
+        $viewModel = new \Application\ViewModel\MatchViewModel($match);
 
         $viewModel->setTerminal(true);
 
@@ -68,16 +58,9 @@ class IndexController extends AbstractActionController {
 
         $match = \Application\Model\GameMatch::get($matchId);
 
-        if (!$match->move($from, $to)) {
-            throw new \Exception('Invalid move');
-        }
+        !$match->move($from, $to);
 
-        $viewModel = new ViewModel([
-            'turn' => $match->getTurn(),
-            'match' => $match,
-            'userTeam' => 1,
-            'movements' => $match->getMovements()
-        ]);
+        $viewModel = new \Application\ViewModel\MatchViewModel($match);
 
         $viewModel->setTerminal(true);
 
