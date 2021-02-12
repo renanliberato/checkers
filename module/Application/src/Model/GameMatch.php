@@ -111,8 +111,6 @@ class GameMatch implements \JsonSerializable {
         }
 
         $this->board->fen = $this->validator->generateFen();
-
-        file_put_contents('./data/match_' . $this->id . '.json', json_encode($this));
     }
 
     public function move($from, $to) {
@@ -140,20 +138,11 @@ class GameMatch implements \JsonSerializable {
         }
 
         $this->board->fen = $this->validator->generateFen();
-
-        file_put_contents('./data/match_' . $this->id . '.json', json_encode($this));
     }
 
-    public static function get($id) {
-        $file = './data/match_' . $id . '.json';
-        if (!file_exists($file)) {
-            throw new Exception("Match not found");
-        }
-
-        $data = json_decode(file_get_contents($file), true);
-
+    public static function fromData($data) {
         $match = new GameMatch();
-        $match->id = $id;
+        $match->id = $data['id'];
         $match->validator = new \Photogabble\Draughts\Draughts($data['board']['fen']);
         $board = new \Application\Model\Board();
         $board->fen = $data['board']['fen'];
@@ -187,8 +176,6 @@ class GameMatch implements \JsonSerializable {
         }, range(31, 50));
 
         $match->board = $board;
-
-        file_put_contents('./data/match_' . $match->id . '.json', json_encode($match));
 
         return $match;
     }

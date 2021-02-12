@@ -60,4 +60,9 @@ return [
     // Initial configuration with which to seed the ServiceManager.
     // Should be compatible with Laminas\ServiceManager\Config.
     // 'service_manager' => [],
+    'service_manager' => [
+        'factories' => [
+            Application\Repository\GameMatchRepositoryInterface::class => Application\Repository\GameMatchRepositoryFactory::class
+        ]
+    ],
 ];

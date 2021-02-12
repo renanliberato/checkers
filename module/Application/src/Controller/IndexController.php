@@ -14,6 +14,13 @@ use Laminas\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController {
 
+    private $matchRepository;
+    
+    public function __construct(\Application\Repository\GameMatchRepositoryInterface $matchRepository)
+    {
+        $this->matchRepository = $matchRepository;
+    }
+    
     public function indexAction() {
         $matchId = $this->params()->fromQuery('match');
 
@@ -21,10 +28,12 @@ class IndexController extends AbstractActionController {
             return $this->redirect()->toUrl('/checkers/application/index/new');
         }
 
-        $match = \Application\Model\GameMatch::get($matchId);
+        $match = $this->matchRepository->get($matchId);
         
-        if ($match->getTurn() == 'b')
+        if ($match->getTurn() == 'b'){
             $match->aiMove();
+            $this->matchRepository->save($match);
+        }
 
         return new \Application\ViewModel\MatchViewModel($match);
     }
@@ -36,9 +45,10 @@ class IndexController extends AbstractActionController {
             return $this->redirect()->toUrl('/checkers/application/index/new');
         }
 
-        $match = \Application\Model\GameMatch::get($matchId);
+        $match = $this->matchRepository->get($matchId);
         
         $match->aiMove();
+        $this->matchRepository->save($match);
         
         $viewModel = new \Application\ViewModel\MatchViewModel($match);
 
@@ -56,9 +66,10 @@ class IndexController extends AbstractActionController {
             return $this->redirect()->toUrl('/checkers/application/index/new');
         }
 
-        $match = \Application\Model\GameMatch::get($matchId);
+        $match = $this->matchRepository->get($matchId);
 
-        !$match->move($from, $to);
+        $match->move($from, $to);
+        $this->matchRepository->save($match);
 
         $viewModel = new \Application\ViewModel\MatchViewModel($match);
 
@@ -69,6 +80,7 @@ class IndexController extends AbstractActionController {
 
     public function newAction() {
         $match = \Application\Model\GameMatch::create();
+        $this->matchRepository->save($match);
 
         return $this->redirect()->toUrl('/checkers/?match=' . $match->getId());
     }
