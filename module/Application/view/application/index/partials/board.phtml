@@ -21,7 +21,7 @@ $posCounter = 1;
 <div style="flex-direction: row; flex: 1;">
     <div id="board">
         <div class="player-bar <?= $turn == 'b' ? 'turn-to-play' : '' ?>">
-            <img src="/img/user.jfif"/>
+            <img src="/checkers/img/user.jfif"/>
             <div>
                 <p>Opponent</p>
             </div>
@@ -36,7 +36,7 @@ $posCounter = 1;
                         <?php else: ?>
                             <span>YOU LOSE!</span>
                         <?php endif; ?>
-                        <a style='margin-top: 10px;' href="/application/index/new"><button style='padding: 10px 20px;'>Play again!</button></a>
+                        <a style='margin-top: 10px;' href="/checkers/application/index/new"><button style='padding: 10px 20px;'>Play again!</button></a>
                     </div>
                 </div>
             <?php endif; ?>
@@ -67,7 +67,7 @@ $posCounter = 1;
             <?php endforeach; ?>
         </div>
         <div class="player-bar <?= $turn == 'w' ? 'turn-to-play' : '' ?>">
-            <img src="/img/user.jfif"/>
+            <img src="/checkers/img/user.jfif"/>
             <div>
                 <p>You</p>
             </div>

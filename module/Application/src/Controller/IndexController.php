@@ -18,7 +18,7 @@ class IndexController extends AbstractActionController {
         $matchId = $this->params()->fromQuery('match');
 
         if (!$matchId) {
-            return $this->redirect()->toUrl('/application/index/new');
+            return $this->redirect()->toUrl('/checkers/application/index/new');
         }
 
         $match = \Application\Model\GameMatch::get($matchId);
@@ -33,7 +33,7 @@ class IndexController extends AbstractActionController {
         $matchId = $this->params()->fromQuery('match');
 
         if (!$matchId) {
-            return $this->redirect()->toUrl('/application/index/new');
+            return $this->redirect()->toUrl('/checkers/application/index/new');
         }
 
         $match = \Application\Model\GameMatch::get($matchId);
@@ -53,7 +53,7 @@ class IndexController extends AbstractActionController {
         $matchId = $this->params()->fromQuery('match');
 
         if (!$matchId) {
-            return $this->redirect()->toUrl('/application/index/new');
+            return $this->redirect()->toUrl('/checkers/application/index/new');
         }
 
         $match = \Application\Model\GameMatch::get($matchId);
@@ -70,7 +70,7 @@ class IndexController extends AbstractActionController {
     public function newAction() {
         $match = \Application\Model\GameMatch::create();
 
-        return $this->redirect()->toUrl('/checkers?match=' . $match->getId());
+        return $this->redirect()->toUrl('/checkers/?match=' . $match->getId());
     }
 
 }

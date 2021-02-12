@@ -13,6 +13,6 @@
  */
 
 return [
-    'url' => '/checkers'
+    //'url' => '/checkers'
     // ...
 ];
