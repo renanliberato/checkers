@@ -20,7 +20,7 @@ $posCounter = 1;
 ?>
 <div style="flex-direction: row; flex: 1;">
     <div id="board">
-        <div class="player-bar <?= $turn == 'b' ? 'turn-to-play' : '' ?>">
+        <div class="player-bar <?= $turn == \Application\Model\Teams::B ? 'turn-to-play' : '' ?>">
             <img src="/checkers/img/user.jfif"/>
             <div>
                 <p>Opponent</p>
@@ -31,7 +31,7 @@ $posCounter = 1;
             <?php if ($result !== null): ?>
                 <div class="result-container">
                     <div class='result'>
-                        <?php if ($result == 'win'): ?>
+                        <?php if ($result == \Application\Model\MatchResult::WIN): ?>
                             <span>YOU WIN!</span>
                         <?php else: ?>
                             <span>YOU LOSE!</span>

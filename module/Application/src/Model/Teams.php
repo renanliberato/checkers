@@ -9,24 +9,12 @@
 namespace Application\Model;
 
 /**
- * Description of Board
+ * Description of Teams
  *
  * @author renan
  */
-class Board {
-    
-    /**
-     * @var Checker
-     */
-    public $checkers;
-    
-    /**
-     * @var string
-     */
-    public $fen;
-    
-    public function __construct()
-    {
-        
-    }
+class Teams {
+    const B = 'b';
+    const W = 'w';
+    //put your code here
 }

@@ -9,24 +9,12 @@
 namespace Application\Model;
 
 /**
- * Description of Board
+ * Description of MatchResult
  *
  * @author renan
  */
-class Board {
-    
-    /**
-     * @var Checker
-     */
-    public $checkers;
-    
-    /**
-     * @var string
-     */
-    public $fen;
-    
-    public function __construct()
-    {
-        
-    }
+class MatchResult {
+    const WIN = 'win';
+    const LOSE = 'lose';
+    //put your code here
 }

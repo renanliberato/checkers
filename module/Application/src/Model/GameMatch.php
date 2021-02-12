@@ -71,19 +71,19 @@ class GameMatch implements \JsonSerializable {
             $res[$checker->team]++;
 
             return $res;
-        }, ['b' => 0, 'w' => 0]);
+        }, [Teams::B => 0, Teams::W => 0]);
 
-        if ($checkersCount == $result['b'])
-            return 'lose';
+        if ($checkersCount == $result[Teams::B])
+            return MatchResult::LOSE;
 
-        if ($checkersCount == $result['w'])
-            return 'win';
+        if ($checkersCount == $result[Teams::W])
+            return MatchResult::WIN;
 
         return null;
     }
 
     public function aiMove() {
-        if ($this->getTurn() != 'b')
+        if ($this->getTurn() != Teams::B)
             throw new \Exception("not AI's turn");
         
         $moves = $this->validator->generateMoves();

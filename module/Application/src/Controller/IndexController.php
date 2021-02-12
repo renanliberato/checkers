@@ -30,7 +30,7 @@ class IndexController extends AbstractActionController {
 
         $match = $this->matchRepository->get($matchId);
         
-        if ($match->getTurn() == 'b'){
+        if ($match->getTurn() == \Application\Model\Teams::B){
             $match->aiMove();
             $this->matchRepository->save($match);
         }
