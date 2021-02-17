@@ -13,9 +13,12 @@ namespace Application\Repository;
  *
  * @author renan
  */
-class GameMatchRepositoryFactory {
-    
-    public function __invoke(\Interop\Container\ContainerInterface $container, $requestedName, ?array $options = NULL) {
+class GameMatchRepositoryFactory implements \Laminas\ServiceManager\Factory\FactoryInterface
+{
+
+    public function __invoke(\Interop\Container\ContainerInterface $container, $requestedName, ?array $options = NULL)
+    {
         return new GameMatchRepository();
     }
+
 }
