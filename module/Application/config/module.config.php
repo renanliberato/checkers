@@ -42,6 +42,11 @@ return [
             Controller\IndexController::class => Controller\IndexControllerFactory::class,
         ],
     ],
+    'service_manager' => [
+        'factories' => [
+            \Application\Repository\GameMatchRepositoryInterface::class => \Application\Repository\GameMatchRepositoryFactory::class
+        ]
+    ],
     'view_manager' => [
         'display_not_found_reason' => true,
         'display_exceptions' => true,
