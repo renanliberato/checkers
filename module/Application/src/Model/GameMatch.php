@@ -93,9 +93,7 @@ class GameMatch implements \JsonSerializable {
 
         $moveResult = $this->validator->move($move);
 
-        $this->board->possibleMoves = array_map(function($move) {
-            return $move->from;
-        }, $this->validator->generateMoves());
+        self::updatePossibleMoves($this, $this->board);
 
         if ($moveResult == null) {
             throw new \Exception('Invalid move');
@@ -120,9 +118,7 @@ class GameMatch implements \JsonSerializable {
 
         $moveResult = $this->validator->move($move);
 
-        $this->board->possibleMoves = array_map(function($move) {
-            return $move->from;
-        }, $this->validator->generateMoves());
+        self::updatePossibleMoves($this, $this->board);
 
         if ($moveResult == null) {
             throw new \Exception('Invalid move');
@@ -147,9 +143,7 @@ class GameMatch implements \JsonSerializable {
         $board = new \Application\Model\Board();
         $board->fen = $data['board']['fen'];
 
-        $board->possibleMoves = array_map(function($move) {
-            return $move->from;
-        }, $match->validator->generateMoves());
+        self::updatePossibleMoves($match, $board);
 
         foreach (array_values($data['board']['checkers']) as $checker) {
             $board->checkers[$checker['position']] = new \Application\Model\Checker($checker['color'], $checker['id'], $checker['position']);
@@ -178,6 +172,12 @@ class GameMatch implements \JsonSerializable {
         $match->board = $board;
 
         return $match;
+    }
+    
+    private static function updatePossibleMoves(GameMatch $match, Board $board) {
+        $board->possibleMoves = array_map(function($move) {
+            return $move->from;
+        }, $match->validator->generateMoves());
     }
 
     public function jsonSerialize() {
