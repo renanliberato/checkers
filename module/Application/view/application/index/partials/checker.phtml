@@ -1,6 +1,8 @@
 <?php
 $checker = isset($checkers[$position]) ? $checkers[$position] : null;
-$canMove = array_search($position, $possibleMoves) !== false;
+$canMove = current(array_filter($possibleMoves, function ($move) use ($position) {
+    return $move['from'] == $position;
+}));
 ?>
 
 <?php if ($checker): ?>

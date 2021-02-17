@@ -175,8 +175,11 @@ class GameMatch implements \JsonSerializable {
     }
     
     private static function updatePossibleMoves(GameMatch $match, Board $board) {
-        $board->possibleMoves = array_map(function($move) {
-            return $move->from;
+        $board->possibleMoves = array_map(function(\Photogabble\Draughts\Move $move) {
+            return [
+                'from' => $move->from,
+                'to' => $move->to
+            ];
         }, $match->validator->generateMoves());
     }
 
