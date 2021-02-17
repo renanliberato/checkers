@@ -1,15 +1,12 @@
 var possibleMovementsFromDragging;
 function allowDrop(ev) {
     ev.preventDefault();
-    /*const destinySpaceId = ev.srcElement.id;
-     if (possibleMovementsFromDragging.includes(destinySpaceId))
-     ev.preventDefault();*/
 }
 
 function drag(ev) {
     possibleMovementsFromDragging = JSON.parse(ev.target.getAttribute('data-canmoveto'))
-    possibleMovementsFromDragging = possibleMovementsFromDragging.map(movement => {
-        return `space${movement.row}${movement.column}`;
+    possibleMovementsFromDragging.forEach(p => {
+        document.querySelectorAll(`[data-position='${p}']`)[0].classList.add('canmoveto');
     });
 
     ev.dataTransfer.setData("id", ev.target.id);
@@ -21,6 +18,10 @@ function drop(ev) {
     var id = ev.dataTransfer.getData('id');
     var curPosition = ev.dataTransfer.getData("position");
     var position = ev.target.getAttribute('data-position');
+
+    possibleMovementsFromDragging.forEach(p => {
+        document.querySelectorAll(`[data-position='${p}']`)[0].classList.remove('canmoveto');
+    });
 
     if (curPosition == position) {
         return;

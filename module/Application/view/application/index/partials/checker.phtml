@@ -1,15 +1,19 @@
 <?php
 $checker = isset($checkers[$position]) ? $checkers[$position] : null;
-$canMove = current(array_filter($possibleMoves, function ($move) use ($position) {
+$possibleCheckerMoves = array_filter($possibleMoves, function ($move) use ($position) {
     return $move['from'] == $position;
-}));
+});
+$canMove = current($possibleCheckerMoves);
+$canMoveTo = array_values(array_map(function ($move) {
+    return $move['to'];
+}, $possibleCheckerMoves));
 ?>
 
 <?php if ($checker): ?>
     <div
-        data-canmoveto='[]'
         data-position='<?= $checker->position ?>'
         id='checker<?= $checker->position ?>'
         <?= $canMove ? 'draggable="true" ondragstart="drag(event)" ' : '' ?>
+        data-canmoveto="<?= json_encode($canMoveTo) ?>"
         class='checker <?= $canMove ? 'movable' : '' ?> <?= $checker->color ?>'></div>
 <?php endif; ?>
